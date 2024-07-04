@@ -464,6 +464,6 @@ document.getElementById('calculateButton').addEventListener('click', function() 
         const combinedStepsText = combinedSteps.map(step => `${step} C`).join(' ').slice(0, -1);
         const CVC = `CVC: ${combinedStepsText} = ${totalImpairment} DT`;
 
-        form.querySelector('.DIPTotalImpairment').textContent = CVC;
+        form.querySelector('.cvc-result').textContent = CVC;
     });
 });
