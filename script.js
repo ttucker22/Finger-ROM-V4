@@ -407,9 +407,11 @@ function addImpairments(impairments) {
     return impairments.reduce((acc, imp) => acc + imp, 0);
 }
 
-document.getElementById('calculateBtn').addEventListener('click', function() {
-    const results = [];
-    document.querySelectorAll('.calculatorForm').forEach(form => {
+document.getElementById('calculateButton').addEventListener('click', function() {
+    const forms = document.querySelectorAll('.calculatorForm');
+    let totalCombinedSteps = [];
+
+    forms.forEach(form => {
         const dipFlexion = form.querySelector('.DIPFlexion').value;
         const dipExtension = form.querySelector('.DIPExtension').value;
         const dipAnkylosis = form.querySelector('.DIPAnkylosis').value;
@@ -442,6 +444,9 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
         const pipImpairment = addImpairments(pipImpairments);
         const mpImpairment = addImpairments(mpImpairments);
 
+        const totalImpairments = [dipImpairment, pipImpairment, mpImpairment].sort((a, b) => b - a); // Sort from highest to lowest
+        const { combined: totalImpairment, combinedSteps } = combineImpairments(totalImpairments);
+
         form.querySelector('.DIPFlexionImpairment').textContent = dipImpairments[0] !== undefined ? dipImpairments[0] : 0;
         form.querySelector('.DIPExtensionImpairment').textContent = dipImpairments[1] !== undefined ? dipImpairments[1] : 0;
         form.querySelector('.DIPAnkylosisImpairment').textContent = dipImpairments[2] !== undefined ? dipImpairments[2] : 0;
@@ -457,15 +462,12 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
         form.querySelector('.MPAnkylosisImpairment').textContent = mpImpairments[2] !== undefined ? mpImpairments[2] : 0;
         form.querySelector('.MPTotalImpairment').textContent = mpImpairment;
 
-        results.push(pipImpairment, mpImpairment, dipImpairment);
+        const combinedStepsText = combinedSteps.map(step => `${step} C`).join(' ').slice(0, -1);
+
+        totalCombinedSteps.push(combinedStepsText);
     });
 
-    const sortedResults = results.sort((a, b) => b - a);
-    const { combined: totalImpairment, combinedSteps } = combineImpairments(sortedResults);
-
-    const combinedStepsText = combinedSteps.map(step => `${step} C`).join(' ').slice(0, -1);
-
     document.getElementById('result').innerHTML = `
-        <p>Combined Impairment: ${combinedStepsText} = ${totalImpairment} DT</p>
+        <p>Combined Impairment per Finger: ${totalCombinedSteps.join(' | ')}</p>
     `;
 });
