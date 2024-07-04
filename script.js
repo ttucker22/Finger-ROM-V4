@@ -409,7 +409,6 @@ function addImpairments(impairments) {
 
 document.getElementById('calculateButton').addEventListener('click', function() {
     const forms = document.querySelectorAll('.calculatorForm');
-    let totalCombinedSteps = [];
 
     forms.forEach(form => {
         const dipFlexion = form.querySelector('.DIPFlexion').value;
@@ -463,11 +462,8 @@ document.getElementById('calculateButton').addEventListener('click', function() 
         form.querySelector('.MPTotalImpairment').textContent = mpImpairment;
 
         const combinedStepsText = combinedSteps.map(step => `${step} C`).join(' ').slice(0, -1);
+        const CVC = `CVC: ${combinedStepsText} = ${totalImpairment} DT`;
 
-        totalCombinedSteps.push(combinedStepsText);
+        form.querySelector('.DIPTotalImpairment').textContent = CVC;
     });
-
-    document.getElementById('result').innerHTML = `
-        <p>Combined Impairment per Finger: ${totalCombinedSteps.join(' | ')}</p>
-    `;
 });
