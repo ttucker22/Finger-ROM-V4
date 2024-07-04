@@ -70,9 +70,11 @@
         button:hover {
             background: #0056b3;
         }
-        #result {
+        .cvc-result {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
@@ -99,7 +101,7 @@
                         <td><input type="number" class="DIPFlexion"></td>
                         <td><input type="number" class="DIPExtension"></td>
                         <td><input type="number" class="DIPAnkylosis"></td>
-                        <td rowspan="2" class="DIPTotalImpairment"></td>
+                        <td class="DIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -112,7 +114,7 @@
                         <td><input type="number" class="PIPFlexion"></td>
                         <td><input type="number" class="PIPExtension"></td>
                         <td><input type="number" class="PIPAnkylosis"></td>
-                        <td rowspan="2" class="PIPTotalImpairment"></td>
+                        <td class="PIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -125,7 +127,7 @@
                         <td><input type="number" class="MPFlexion"></td>
                         <td><input type="number" class="MPExtension"></td>
                         <td><input type="number" class="MPAnkylosis"></td>
-                        <td rowspan="2" class="MPTotalImpairment"></td>
+                        <td class="MPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -135,6 +137,7 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="cvc-result"></div>
         </form>
     </div>
 
@@ -157,7 +160,7 @@
                         <td><input type="number" class="DIPFlexion"></td>
                         <td><input type="number" class="DIPExtension"></td>
                         <td><input type="number" class="DIPAnkylosis"></td>
-                        <td rowspan="2" class="DIPTotalImpairment"></td>
+                        <td class="DIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -170,11 +173,11 @@
                         <td><input type="number" class="PIPFlexion"></td>
                         <td><input type="number" class="PIPExtension"></td>
                         <td><input type="number" class="PIPAnkylosis"></td>
-                        <td rowspan="2" class="PIPTotalImpairment"></td>
+                        <td class="PIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
-                                                <td class="PIPFlexionImpairment">0</td>
+                        <td class="PIPFlexionImpairment">0</td>
                         <td class="PIPExtensionImpairment">0</td>
                         <td class="PIPAnkylosisImpairment">0</td>
                     </tr>
@@ -183,7 +186,7 @@
                         <td><input type="number" class="MPFlexion"></td>
                         <td><input type="number" class="MPExtension"></td>
                         <td><input type="number" class="MPAnkylosis"></td>
-                        <td rowspan="2" class="MPTotalImpairment"></td>
+                        <td class="MPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -193,6 +196,7 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="cvc-result"></div>
         </form>
     </div>
 
@@ -215,12 +219,12 @@
                         <td><input type="number" class="DIPFlexion"></td>
                         <td><input type="number" class="DIPExtension"></td>
                         <td><input type="number" class="DIPAnkylosis"></td>
-                        <td rowspan="2" class="DIPTotalImpairment"></td>
+                        <td class="DIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
                         <td class="DIPFlexionImpairment">0</td>
-                        <td class="DIPExtensionImpairment">0</td>
+                                            <td class="DIPExtensionImpairment">0</td>
                         <td class="DIPAnkylosisImpairment">0</td>
                     </tr>
                     <tr>
@@ -228,7 +232,7 @@
                         <td><input type="number" class="PIPFlexion"></td>
                         <td><input type="number" class="PIPExtension"></td>
                         <td><input type="number" class="PIPAnkylosis"></td>
-                        <td rowspan="2" class="PIPTotalImpairment"></td>
+                        <td class="PIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -241,7 +245,7 @@
                         <td><input type="number" class="MPFlexion"></td>
                         <td><input type="number" class="MPExtension"></td>
                         <td><input type="number" class="MPAnkylosis"></td>
-                        <td rowspan="2" class="MPTotalImpairment"></td>
+                        <td class="MPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -251,6 +255,7 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="cvc-result"></div>
         </form>
     </div>
 
@@ -273,7 +278,7 @@
                         <td><input type="number" class="DIPFlexion"></td>
                         <td><input type="number" class="DIPExtension"></td>
                         <td><input type="number" class="DIPAnkylosis"></td>
-                        <td rowspan="2" class="DIPTotalImpairment"></td>
+                        <td class="DIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -286,7 +291,7 @@
                         <td><input type="number" class="PIPFlexion"></td>
                         <td><input type="number" class="PIPExtension"></td>
                         <td><input type="number" class="PIPAnkylosis"></td>
-                        <td rowspan="2" class="PIPTotalImpairment"></td>
+                        <td class="PIPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -299,7 +304,7 @@
                         <td><input type="number" class="MPFlexion"></td>
                         <td><input type="number" class="MPExtension"></td>
                         <td><input type="number" class="MPAnkylosis"></td>
-                        <td rowspan="2" class="MPTotalImpairment"></td>
+                        <td class="MPTotalImpairment" rowspan="2"></td>
                     </tr>
                     <tr>
                         <td>Impairment</td>
@@ -309,6 +314,7 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="cvc-result"></div>
         </form>
     </div>
 
